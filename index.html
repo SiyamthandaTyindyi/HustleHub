@@ -40,6 +40,7 @@
             text-align: center;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
         }
 
         .tagline {
@@ -68,6 +69,7 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -76,6 +78,7 @@
 
         main {
             padding: 3rem 0;
+            min-height: 60vh;
         }
 
         .hero {
@@ -159,6 +162,10 @@
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
         }
 
         .cta-button:hover {
@@ -197,6 +204,7 @@
             color: #6d4c41;
             text-decoration: none;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .sidebar a:hover {
@@ -215,6 +223,17 @@
             margin-bottom: 0.5rem;
         }
 
+        footer a {
+            color: #d7ccc8;
+            margin: 0 1rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer a:hover {
+            color: #ffcc80;
+        }
+
         .category-tag {
             display: inline-block;
             background: #8d6e63;
@@ -223,6 +242,76 @@
             border-radius: 20px;
             font-size: 0.85rem;
             margin-bottom: 1rem;
+        }
+
+        .full-article {
+            background: #fff8e1;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(62, 39, 35, 0.15);
+            border: 2px solid #d7ccc8;
+            margin-bottom: 2rem;
+        }
+
+        .full-article h2 {
+            color: #4e342e;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 4px solid #8d6e63;
+            padding-bottom: 1rem;
+        }
+
+        .full-article h3 {
+            color: #6d4c41;
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .full-article h4 {
+            color: #6d4c41;
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-button {
+            background: #6d4c41;
+            color: #f5e6d3;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-family: inherit;
+        }
+
+        .back-button:hover {
+            background: #5d4037;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #d7ccc8;
+        }
+
+        .resource-card h4 {
+            color: #4e342e;
+            margin-bottom: 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -241,160 +330,770 @@
             nav ul {
                 gap: 1rem;
             }
+
+            .full-article {
+                padding: 1.5rem;
+            }
+
+            .full-article h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>💰 Money Makers Hub</h1>
+            <h1 onclick="showPage('home')">💰 Money Makers Hub</h1>
             <p class="tagline">Your Daily Guide to Earning Online Income</p>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#articles">Latest Articles</a></li>
-                    <li><a href="#methods">Money Making Methods</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('articles')">Latest Articles</a></li>
+                    <li><a onclick="showPage('methods')">Money Making Methods</a></li>
+                    <li><a onclick="showPage('resources')">Resources</a></li>
+                    <li><a onclick="showPage('about')">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero">
-            <h2>Start Your Journey to Financial Freedom</h2>
-            <p>Welcome to Money Makers Hub, where we share proven strategies, legitimate opportunities, and practical tips to help you build sustainable income streams online. Updated daily with fresh content!</p>
-        </section>
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page-content">
+            <section class="hero">
+                <h2>Start Your Journey to Financial Freedom</h2>
+                <p>Welcome to Money Makers Hub, where we share proven strategies, legitimate opportunities, and practical tips to help you build sustainable income streams online. Updated daily with fresh content!</p>
+            </section>
 
-        <section id="articles">
             <div class="content-grid">
                 <article class="article-card">
                     <span class="category-tag">Freelancing</span>
                     <h3>10 High-Paying Freelance Skills You Can Learn in 30 Days</h3>
                     <p class="date">Published: November 10, 2025</p>
-                    <p>The freelance economy is booming, and you don't need years of experience to get started. Here are skills that can quickly turn into profitable income streams:</p>
-                    <ul>
-                        <li><strong>Content Writing:</strong> Average R900-R2,700 per article</li>
-                        <li><strong>Social Media Management:</strong> R9,000-R36,000/month per client</li>
-                        <li><strong>Virtual Assistance:</strong> R270-R900/hour</li>
-                        <li><strong>Basic Graphic Design:</strong> R450-R1,800 per project</li>
-                        <li><strong>Video Editing:</strong> R900-R3,600 per video</li>
-                    </ul>
-                    <p>Start by taking free courses on platforms like Coursera, YouTube, or freeCodeCamp. Build a portfolio with 3-5 sample projects, then join Upwork or Fiverr to land your first clients.</p>
-                    <a href="#" class="cta-button">Read Full Guide →</a>
+                    <p>The freelance economy is booming, and you don't need years of experience to get started. Here are skills that can quickly turn into profitable income streams...</p>
+                    <button class="cta-button" onclick="showArticle('freelance')">Read Full Guide →</button>
                 </article>
 
                 <article class="article-card">
                     <span class="category-tag">Passive Income</span>
                     <h3>Creating and Selling Digital Products: A Complete Blueprint</h3>
                     <p class="date">Published: November 9, 2025</p>
-                    <p>Digital products offer incredible profit margins (often 90%+) and can generate income while you sleep. Here's what's selling right now:</p>
-                    <ul>
-                        <li><strong>Notion Templates:</strong> Productivity templates selling for R230-500</li>
-                        <li><strong>Printable Planners:</strong> Consistent R12,000+/month possible on Etsy</li>
-                        <li><strong>Stock Photos:</strong> Upload once, earn forever on Shutterstock</li>
-                        <li><strong>Online Courses:</strong> Share your expertise, earn R170-500 per sale</li>
-                        <li><strong>eBooks:</strong> Self-publish on Amazon KDP</li>
-                    </ul>
-                    <p>The key is to solve a specific problem for a specific audience. Research what people are already buying, then create something better.</p>
-                    <a href="#" class="cta-button">Learn More →</a>
+                    <p>Digital products offer incredible profit margins (often 90%+) and can generate income while you sleep...</p>
+                    <button class="cta-button" onclick="showArticle('digital-products')">Learn More →</button>
                 </article>
 
                 <article class="article-card">
                     <span class="category-tag">Quick Money</span>
-                    <h3>7 Legit Ways to Make R1,930 in 24 Hours</h3>
+                    <h3>7 Legit Ways to Make R1,800 in 24 Hours</h3>
                     <p class="date">Published: November 8, 2025</p>
-                    <p>Need quick cash? These methods can put money in your pocket fast:</p>
-                    <ul>
-                        <li><strong>Sell Unused Items:</strong> Facebook Marketplace, OfferUp, or Craigslist</li>
-                        <li><strong>Gig Work:</strong> TaskRabbit, Handy, or local moving help</li>
-                        <li><strong>Online Tutoring:</strong> Tutor.com pays </R150-250>/hour, same-day payout options</li>
-                        <li><strong>Food Delivery:</strong> DoorDash, Uber Eats (instant pay available)</li>
-                        <li><strong>Freelance Rush Jobs:</strong> Fiverr Gig Express for urgent projects</li>
-                    </ul>
-                    <p>Pro tip: Stack multiple methods in one day. Sell items in the morning, do a few hours of delivery in the afternoon, and take an online gig in the evening.</p>
-                    <a href="#" class="cta-button">Get Started →</a>
+                    <p>Need quick cash? These methods can put money in your pocket fast...</p>
+                    <button class="cta-button" onclick="showArticle('quick-money')">Get Started →</button>
                 </article>
 
                 <article class="article-card">
                     <span class="category-tag">Investing</span>
-                    <h3>Beginner's Guide to Dividend Investing: Earn Passive Income Monthly</h3>
+                    <h3>Beginner's Guide to Dividend Investing</h3>
                     <p class="date">Published: November 7, 2025</p>
-                    <p>Dividend investing is one of the most reliable ways to build passive income. Here's how to start with as little as R20:</p>
-                    <ul>
-                        <li><strong>Dividend ETFs:</strong> Instant diversification (SCHD, VYM, VIG)</li>
-                        <li><strong>REITs:</strong> Real estate income without buying property</li>
-                        <li><strong>Blue Chip Stocks:</strong> Established companies with consistent payouts</li>
-                        <li><strong>Dividend Aristocrats:</strong> Companies increasing dividends for 25+ years</li>
-                    </ul>
-                    <p>Start with a brokerage account (Fidelity, Schwab, or Robinhood), invest regularly, and reinvest dividends. A R150 portfolio yielding 4% generates R40,000/year in passive income.</p>
-                    <a href="#" class="cta-button">Investment Guide →</a>
+                    <p>Dividend investing is one of the most reliable ways to build passive income...</p>
+                    <button class="cta-button" onclick="showArticle('dividend')">Investment Guide →</button>
                 </article>
 
                 <article class="article-card">
                     <span class="category-tag">Side Hustle</span>
-                    <h3>Turn Your Hobby Into R15000+ Monthly Income</h3>
+                    <h3>Turn Your Hobby Into R9,000+ Monthly Income</h3>
                     <p class="date">Published: November 6, 2025</p>
-                    <p>Your hobby could be your next income stream. Here are profitable hobbies and how to monetize them:</p>
-                    <ul>
-                        <li><strong>Photography:</strong> Sell on stock sites or offer portrait sessions</li>
-                        <li><strong>Baking:</strong> Start a cottage bakery or sell at farmers markets</li>
-                        <li><strong>Gaming:</strong> Stream on Twitch, create gaming content on YouTube</li>
-                        <li><strong>Crafting:</strong> Sell handmade items on Etsy or local craft fairs</li>
-                        <li><strong>Fitness:</strong> Online coaching, workout plans, or YouTube tutorials</li>
-                    </ul>
-                    <p>The secret is starting before you feel ready. Launch with what you have, get feedback, and improve as you earn.</p>
-                    <a href="#" class="cta-button">Monetization Strategies →</a>
+                    <p>Your hobby could be your next income stream. Here are profitable hobbies and how to monetize them...</p>
+                    <button class="cta-button" onclick="showArticle('hobby')">Monetization Strategies →</button>
                 </article>
 
                 <article class="article-card">
                     <span class="category-tag">Remote Work</span>
                     <h3>Highest Paying Remote Jobs That Don't Require a Degree</h3>
                     <p class="date">Published: November 5, 2025</p>
-                    <p>Remote work is more accessible than ever. These positions offer excellent pay without requiring a college degree:</p>
-                    <ul>
-                        <li><strong>Software Developer:</strong> R78k-150k (learn through bootcamps)</li>
-                        <li><strong>Digital Marketing Manager:</strong> R50k-100k</li>
-                        <li><strong>UX/UI Designer:</strong> R60k-120k</li>
-                        <li><strong>Sales Representative:</strong> R40k-100k+ with commissions</li>
-                        <li><strong>Project Manager:</strong> R55k-110k</li>
-                    </ul>
-                    <p>Focus on building a strong portfolio and gaining certifications. Sites like FlexJobs, We Work Remotely, and Remote.co list quality opportunities daily.</p>
-                    <a href="#" class="cta-button">Job Opportunities →</a>
+                    <p>Remote work is more accessible than ever. These positions offer excellent pay without requiring a college degree...</p>
+                    <button class="cta-button" onclick="showArticle('remote-jobs')">Job Opportunities →</button>
                 </article>
             </div>
-        </section>
+        </div>
 
-        <section id="methods" class="sidebar">
-            <h3>Popular Money-Making Methods</h3>
-            <ul>
-                <li><a href="#">Affiliate Marketing Essentials</a></li>
-                <li><a href="#">Starting a Profitable Blog</a></li>
-                <li><a href="#">YouTube Monetization Guide</a></li>
-                <li><a href="#">Dropshipping for Beginners</a></li>
-                <li><a href="#">Print on Demand Business</a></li>
-                <li><a href="#">Amazon FBA Explained</a></li>
-                <li><a href="#">Creating Online Courses</a></li>
-                <li><a href="#">Cryptocurrency for Beginners</a></li>
-                <li><a href="#">Real Estate Crowdfunding</a></li>
-                <li><a href="#">Building an Email List</a></li>
-            </ul>
-        </section>
+        <!-- FREELANCE ARTICLE -->
+        <div id="freelance-article" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <article class="full-article">
+                <span class="category-tag">Freelancing</span>
+                <h2>10 High-Paying Freelance Skills You Can Learn in 30 Days</h2>
+                <p class="date">Published: November 10, 2025 | Reading Time: 8 minutes</p>
+                
+                <p>The freelance economy in South Africa is thriving, with thousands of people earning substantial incomes from the comfort of their homes. The best part? You don't need years of experience or expensive degrees to get started. In just 30 days of focused learning, you can acquire marketable skills that clients are actively seeking.</p>
 
-        <section id="resources" class="sidebar">
-            <h3>Recommended Resources</h3>
-            <ul>
-                <li><a href="#">Best Freelance Platforms 2025</a></li>
-                <li><a href="#">Free Online Learning Resources</a></li>
-                <li><a href="#">Essential Tools for Online Business</a></li>
-                <li><a href="#">Tax Tips for Side Hustlers</a></li>
-                <li><a href="#">Productivity Apps We Love</a></li>
-                <li><a href="#">Marketing Tools on a Budget</a></li>
-                <li><a href="#">Legal Basics for Online Business</a></li>
-                <li><a href="#">Financial Planning Resources</a></li>
-            </ul>
-        </section>
+                <h3>1. Content Writing (R900-R2,700 per article)</h3>
+                <p>Content writing is one of the easiest freelance skills to start with. Businesses constantly need blog posts, website copy, product descriptions, and marketing materials.</p>
+                <h4>How to Get Started:</h4>
+                <ul>
+                    <li>Take free courses on Coursera, HubSpot Academy, or YouTube</li>
+                    <li>Read popular blogs in niches you're interested in</li>
+                    <li>Practice writing 500-1000 word articles daily</li>
+                    <li>Study SEO basics (keyword research, on-page optimization)</li>
+                    <li>Create 5-10 sample articles for your portfolio</li>
+                </ul>
+                <h4>Where to Find Work:</h4>
+                <p>Upwork, Fiverr, Freelancer, ContentMart, and local South African job boards like Gumtree and CareerJunction.</p>
+
+                <h3>2. Social Media Management (R9,000-R36,000/month per client)</h3>
+                <p>Small businesses struggle to maintain consistent social media presence. If you understand Instagram, Facebook, TikTok, and LinkedIn, you can offer this valuable service.</p>
+                <h4>Skills to Learn:</h4>
+                <ul>
+                    <li>Content calendar planning</li>
+                    <li>Canva for graphic design</li>
+                    <li>Scheduling tools (Buffer, Hootsuite, Later)</li>
+                    <li>Basic analytics and reporting</li>
+                    <li>Engagement strategies and community management</li>
+                </ul>
+                <h4>Pro Tip:</h4>
+                <p>Start by managing social media for a local business for free or at a discounted rate. Document your results (follower growth, engagement rates) to build your portfolio.</p>
+
+                <h3>3. Virtual Assistance (R270-R900/hour)</h3>
+                <p>Virtual assistants handle administrative tasks remotely: email management, scheduling, data entry, customer service, and more.</p>
+                <h4>Essential Tools:</h4>
+                <ul>
+                    <li>Google Workspace (Docs, Sheets, Calendar)</li>
+                    <li>Microsoft Office</li>
+                    <li>Communication platforms (Slack, Zoom)</li>
+                    <li>Project management tools (Trello, Asana)</li>
+                </ul>
+
+                <h3>4. Basic Graphic Design (R450-R1,800 per project)</h3>
+                <p>You don't need to be a Photoshop expert. With Canva, you can create professional social media graphics, flyers, logos, and marketing materials.</p>
+                <h4>30-Day Learning Path:</h4>
+                <ul>
+                    <li>Week 1: Master Canva interface and templates</li>
+                    <li>Week 2: Learn color theory and typography basics</li>
+                    <li>Week 3: Study successful designs in your niche</li>
+                    <li>Week 4: Create 20 diverse portfolio pieces</li>
+                </ul>
+
+                <h3>5. Video Editing (R900-R3,600 per video)</h3>
+                <p>With the explosion of YouTube, TikTok, and Instagram Reels, video editors are in high demand.</p>
+                <h4>Tools to Learn:</h4>
+                <ul>
+                    <li>CapCut (free, beginner-friendly)</li>
+                    <li>DaVinci Resolve (free, professional)</li>
+                    <li>Adobe Premiere Pro (industry standard, paid)</li>
+                </ul>
+
+                <h3>6. Email Marketing (R450-R1,350/hour)</h3>
+                <p>Businesses need email campaigns to nurture leads and maintain customer relationships.</p>
+                <h4>What to Learn:</h4>
+                <ul>
+                    <li>Copywriting for emails</li>
+                    <li>Email automation platforms (Mailchimp, ConvertKit)</li>
+                    <li>List segmentation strategies</li>
+                    <li>A/B testing and analytics</li>
+                </ul>
+
+                <h3>7. Basic Web Development (R900-R2,700 per page)</h3>
+                <p>Learn to build simple websites using WordPress, Wix, or basic HTML/CSS.</p>
+                <h4>30-Day Plan:</h4>
+                <ul>
+                    <li>Days 1-10: Complete freeCodeCamp HTML/CSS course</li>
+                    <li>Days 11-20: Learn WordPress basics</li>
+                    <li>Days 21-30: Build 3 practice websites</li>
+                </ul>
+
+                <h3>8. Transcription (R180-R360/audio hour)</h3>
+                <p>Converting audio/video to text. Great for beginners with good typing speed and attention to detail.</p>
+                <h4>Platforms:</h4>
+                <p>Rev, TranscribeMe, GoTranscript, and local SA companies.</p>
+
+                <h3>9. Data Entry (R90-R270/hour)</h3>
+                <p>While lower paying, data entry requires minimal skills and is perfect for building initial experience and client reviews.</p>
+
+                <h3>10. Online Tutoring (R270-R900/hour)</h3>
+                <p>If you excel in any subject (math, science, English, languages), you can tutor students online.</p>
+                <h4>Platforms:</h4>
+                <ul>
+                    <li>Preply - teach languages</li>
+                    <li>Tutor.com - various subjects</li>
+                    <li>Teach Me 2 - South African platform</li>
+                </ul>
+
+                <h3>Action Plan to Start Earning</h3>
+                <h4>Week 1: Learn and Practice</h4>
+                <p>Choose 2-3 skills that interest you. Take free courses, watch tutorials, and practice daily.</p>
+                
+                <h4>Week 2-3: Build Your Portfolio</h4>
+                <p>Create sample projects demonstrating your skills. Quality over quantity—5 excellent samples beat 20 mediocre ones.</p>
+
+                <h4>Week 4: Launch Your Services</h4>
+                <ul>
+                    <li>Create profiles on Upwork and Fiverr</li>
+                    <li>Set competitive beginner rates</li>
+                    <li>Apply to 10-20 jobs daily</li>
+                    <li>Network in Facebook groups and LinkedIn</li>
+                </ul>
+
+                <h3>Pricing Strategy for Beginners</h3>
+                <p>Start with lower rates to build reviews and experience. After 5-10 positive reviews, gradually increase your rates. Don't undersell yourself long-term—your skills have value!</p>
+
+                <h3>Final Tips for Success</h3>
+                <ul>
+                    <li><strong>Be reliable:</strong> Meet deadlines and communicate clearly</li>
+                    <li><strong>Over-deliver:</strong> Exceed client expectations when possible</li>
+                    <li><strong>Ask for reviews:</strong> Positive testimonials attract more clients</li>
+                    <li><strong>Keep learning:</strong> Continuously improve your skills</li>
+                    <li><strong>Stay professional:</strong> Treat freelancing like a real business</li>
+                </ul>
+
+                <p><strong>Remember:</strong> Everyone starts at zero. The freelancers earning R50,000+ per month all began with their first R500 project. Your freelance journey starts with a single step—take it today!</p>
+            </article>
+        </div>
+
+        <!-- DIGITAL PRODUCTS ARTICLE -->
+        <div id="digital-products-article" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <article class="full-article">
+                <span class="category-tag">Passive Income</span>
+                <h2>Creating and Selling Digital Products: A Complete Blueprint</h2>
+                <p class="date">Published: November 9, 2025 | Reading Time: 10 minutes</p>
+                
+                <p>Digital products represent one of the most lucrative online business models. Once created, they can generate passive income indefinitely with minimal ongoing effort. The profit margins are extraordinary—often 90-95%—because there are no production costs, shipping fees, or inventory management.</p>
+
+                <h3>Why Digital Products?</h3>
+                <ul>
+                    <li><strong>Infinite scalability:</strong> Sell to 1 person or 10,000 with no extra work</li>
+                    <li><strong>Passive income:</strong> Create once, earn forever</li>
+                    <li><strong>Low startup costs:</strong> Often just your time and knowledge</li>
+                    <li><strong>Global reach:</strong> Sell worldwide instantly</li>
+                    <li><strong>Automated delivery:</strong> No shipping or fulfillment needed</li>
+                </ul>
+
+                <h3>1. Notion Templates (R90-R900 each)</h3>
+                <p>Notion is a productivity tool with millions of users seeking pre-built templates to save time.</p>
+                <h4>Popular Template Types:</h4>
+                <ul>
+                    <li>Content calendars for creators</li>
+                    <li>Budget and finance trackers</li>
+                    <li>Project management systems</li>
+                    <li>Meal planning templates</li>
+                    <li>Student study planners</li>
+                    <li>Habit trackers</li>
+                </ul>
+                <h4>How to Create:</h4>
+                <p>Sign up for free Notion account, build useful templates, make them visually appealing, and test thoroughly before selling.</p>
+                <h4>Where to Sell:</h4>
+                <p>Gumroad, Etsy, your own website, Notion Template Gallery.</p>
+
+                <h3>2. Printable Planners (R18,000+/month potential on Etsy)</h3>
+                <p>People love physical planners but prefer digital downloads they can print at home.</p>
+                <h4>Best-Selling Printables:</h4>
+                <ul>
+                    <li>Budget planners and expense trackers</li>
+                    <li>Wedding planning binders</li>
+                    <li>Fitness and meal prep planners</li>
+                    <li>Goal setting worksheets</li>
+                    <li>Party decorations and invitations</li>
+                    <li>Educational worksheets for kids</li>
+                </ul>
+                <h4>Creation Process:</h4>
+                <p>Design in Canva or Adobe Illustrator, export as high-quality PDF, create product mockups, optimize Etsy listings with keywords.</p>
+
+                <h3>3. Stock Photos (Passive income on Shutterstock, Adobe Stock)</h3>
+                <p>If you enjoy photography, upload your photos once and earn royalties every time someone downloads them.</p>
+                <h4>High-Demand Photo Categories:</h4>
+                <ul>
+                    <li>Business and technology</li>
+                    <li>People working from home</li>
+                    <li>South African landscapes and culture</li>
+                    <li>Food and cooking</li>
+                    <li>Fitness and wellness</li>
+                </ul>
+                <h4>Tips for Success:</h4>
+                <p>Use good lighting, follow platform guidelines, add detailed keywords and descriptions, upload consistently (aim for 100+ photos).</p>
+
+                <h3>4. Online Courses (R180-R9,000 per sale)</h3>
+                <p>Share your expertise through video courses. If you know something others want to learn, you can create a course.</p>
+                <h4>Course Ideas:</h4>
+                <ul>
+                    <li>Your professional skill (accounting, coding, design)</li>
+                    <li>Hobby expertise (gardening, cooking, crafts)</li>
+                    <li>Language lessons (especially indigenous SA languages)</li>
+                    <li>Fitness programs or yoga instruction</li>
+                    <li>Business and entrepreneurship</li>
+                </ul>
+                <h4>Platform Options:</h4>
+                <ul>
+                    <li><strong>Udemy:</strong> Huge audience, but they set pricing</li>
+                    <li><strong>Teachable:</strong> Full control, higher profit margins</li>
+                    <li><strong>Skillshare:</strong> Subscription model, passive income</li>
+                    <li><strong>Gumroad:</strong> Simple, direct sales</li>
+                </ul>
+                <h4>Creating Your Course:</h4>
+                <ol>
+                    <li>Identify a specific problem you can solve</li>
+                    <li>Outline your course curriculum (aim for 2-4 hours)</li>
+                    <li>Record video lessons (smartphone is fine to start)</li>
+                    <li>Add worksheets, resources, and exercises</li>
+                    <li>Set competitive pricing</li>
+                    <li>Market through social media and email</li>
+                </ol>
+
+                <h3>5. eBooks (Self-publish on Amazon KDP)</h3>
+                <p>Write once, sell forever. Amazon's Kindle Direct Publishing makes it easy.</p>
+                <h4>Profitable eBook Niches:</h4>
+                <ul>
+                    <li>How-to guides and tutorials</li>
+                    <li>Self-help and personal development</li>
+                    <li>Fiction (romance, thriller, mystery)</li>
+                    <li>Children's books</li>
+                    <li>Recipe and cookbook collections</li>
+                </ul>
+                <h4>Publishing Steps:</h4>
+                <p>Write your book (aim for 10,000-50,000 words), hire an editor on Fiverr, design or commission a cover, format for Kindle, upload to KDP, set your price and keywords.</p>
+
+                <h3>6. Spreadsheet Templates (R90-R450)</h3>
+                <p>Excel and Google Sheets templates for specific business or personal needs.</p>
+                <h4>Popular Templates:</h4>
+                <ul>
+                    <li>Invoice and receipt generators</li>
+                    <li>Budget calculators</li>
+                    <li>Inventory management systems</li>
+                    <li>Sales trackers</li>
+                    <li>Project timelines</li>
+                </ul>
+
+                <h3>7. Design Assets (Fonts, graphics, icons)</h3>
+                <p>Sell to other designers and creators.</p>
+                <h4>What Sells:</h4>
+                <ul>
+                    <li>Custom fonts and typography</li>
+                    <li>Social media templates</li>
+                    <li>Logo elements and branding kits</li>
+                    <li>Illustration packs</li>
+                    <li>Procreate brushes</li>
+                </ul>
+                <h4>Marketplaces:</h4>
+                <p>Creative Market, Etsy, Gumroad, Design Cuts.</p>
+
+                <h3>The Formula for Digital Product Success</h3>
+                <h4>Step 1: Find a Proven Demand</h4>
+                <p>Don't create in a vacuum. Research what's already selling. Use:</p>
+                <ul>
+                    <li>Etsy search trends</li>
+                    <li>Amazon bestseller lists</li>
+                    <li>Facebook group discussions</li>
+                    <li>Reddit communities</li>
+                    <li>Google Trends</li>
+                </ul>
+
+                <h4>Step 2: Create Something Better</h4>
+                <p>Study top sellers in your niche. Identify what customers love and what's missing. Create a superior product.</p>
+
+                <h4>Step 3: Price Strategically</h4>
+                <p>Start lower to build reviews and social proof. Increase prices as you gain traction. Test different price points.</p>
+
+                <h4>Step 4: Market Effectively</h4>
+                <ul>
+                    <li>Create valuable free content related to your product</li>
+                    <li>Build an email list</li>
+                    <li>Use Pinterest (massive traffic for digital products)</li>
+                    <li>Join relevant Facebook groups</li>
+                    <li>Create YouTube tutorials showcasing your product</li>
+                </ul>
+
+                <h3>Real Success Story</h3>
+                <p>Sarah from Cape Town created Notion budget templates. She started with one template at R90. After positive reviews, she created a bundle of 5 templates for R360. Within 6 months, she was earning R25,000+ monthly, working just a few hours per week on updates and new templates.</p>
+
+                <h3>Getting Started This Week</h3>
+                <h4>Day 1-2: Research and Choose</h4>
+                <p>Pick one digital product type that matches your skills and interests.</p>
+
+                <h4>Day 3-5: Create Your First Product</h4>
+                <p>Don't aim for perfection. Create a solid, useful product.</p>
+
+                <h4>Day 6: Set Up Your Sales Platform</h4>
+                <p>Create seller accounts on Gumroad and Etsy.</p>
+
+                <h4>Day 7: Launch!</h4>
+                <p>Publish your product and share with your network.</p>
+
+                <p><strong>Remember:</strong> Your first digital product won't make you rich overnight. But it's the foundation. Each product you create teaches you more. Scale by creating multiple products, and passive income builds over time.</p>
+            </article>
+        </div>
+
+        <!-- QUICK MONEY ARTICLE -->
+        <div id="quick-money-article" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <article class="full-article">
+                <span class="category-tag">Quick Money</span>
+                <h2>7 Legit Ways to Make R1,800 in 24 Hours</h2>
+                <p class="date">Published: November 8, 2025 | Reading Time: 7 minutes</p>
+                
+                <p>Sometimes you need cash fast—an unexpected bill, emergency expense, or just making ends meet before payday. Here are seven legitimate methods to earn R1,800 (or more) within 24 hours. These aren't scams or get-rich-quick schemes—they're real work that pays quickly.</p>
+
+                <h3>1. Sell Unused Items (Potential: R500-R5,000)</h3>
+                <p>Look around your home. You likely have items worth money that you no longer use.</p>
+                <h4>What Sells Fast:</h4>
+                <ul>
+                    <li>Electronics (old phones, tablets, laptops)</li>
+                    <li>Designer clothing and shoes</li>
+                    <li>Furniture in good condition</li>
+                    <li>Appliances</li>
+                    <li>Collectibles, books, DVDs</li>
+                    <li>Tools and equipment</li>
+                </ul>
+                <h4>Where to Sell:</h4>
+                <ul>
+                    <li><strong>Facebook Marketplace:</strong> Local, instant meetups</li>
+                    <li><strong>Gumtree:</strong> Wide South African audience</li>
+                    <li><strong>OLX:</strong> Popular classifieds platform</li>
+                    <li><strong>WhatsApp Status:</strong> Quick sales to friends/family</li>
+                </ul>
+                <h4>Quick-Sale Tips:</h4>
+                <ul>
+                    <li>Price items 10-20% below market value</li>
+                    <li>Take clear, well-lit photos</li>
+                    <li>Write honest descriptions</li>
+                    <li>Respond to inquiries immediately</li>
+                    <li>Offer contactless pickup for safety</li>
+                </ul>
+
+                <h3>2. Gig Work (R300-R900 in 4-6 hours)</h3>
+                <p>Same-day gig platforms connect you with people who need immediate help.</p>
+                <h4>SweepSouth (Cleaning Services)</h4>
+                <p>Register as a SweepStar, complete 2-4 cleaning jobs in one day. Earn R200-R300 per job.</p>
+
+                <h4>Pargo (Parcel Pickup Points)</h4>
+                <p>Become a pickup point host or driver. Earn per parcel handled or delivered.</p>
+
+                <h4>Local Moving and Handyman Work</h4>
+                <p>Post on community Facebook groups offering moving help, furniture assembly, or general handyman services. Charge R250-R400 per hour.</p>
+
+                <h4>Garden Services</h4>
+                <p>Lawn mowing, weeding, and basic garden maintenance. Many homeowners will pay R400-R800 for a thorough garden clean-up.</p>
+
+                <h3>3. Online Tutoring (R270-R450/hour × 4-6 hours = R1,080-R2,700)</h3>
+                <p>If you have expertise in any subject, you can tutor online and get paid the same day on some platforms.</p>
+                <h4>Platforms with Quick Payout:</h4>
+                <ul>
+                    <li><strong>Tutor.com:</strong> Apply, get approved, start tutoring. Some payment methods allow same-day access</li>
+                    <li><strong>Preply:</strong> Teach languages or academic subjects</li>
+                    <li><strong>Teach Me 2:</strong> South African platform connecting tutors with students</li>
+                </ul>
+                <h4>What You Can Tutor:</h4>
+                <ul>
+                    <li>Maths and Science (high school level)</li>
+                    <li>English language</li>
+                    <li>African languages (high demand internationally)</li>
+                    <li>Music lessons</li>
+                    <li>Test prep (matric, SATs)</li>
+                </ul>
+
+                <h3>4. Food Delivery (R600-R1,500 in 6-8 hours)</h3>
+                <p>If you have a car, scooter, or bicycle, food delivery offers flexible earning with instant pay options.</p>
+                <h4>Platforms:</h4>
+                <ul>
+                    <li><strong>Uber Eats:</strong> Instant Pay feature available</li>
+                    <li><strong>Mr D Food:</strong> Weekly payouts, but consistent work</li>
+                    <li><strong>Bolt Food:</strong> Growing platform in SA cities</li>
+                </ul>
+                <h4>Maximizing Earnings:</h4>
+                <ul>
+                    <li>Work during peak hours (lunch 11am-2pm, dinner 5pm-9pm)</li>
+                    <li>Focus on busy areas (Sandton, Cape Town CBD, Durban beachfront)</li>
+                    <li>Accept most orders to increase your acceptance rate</li>
+                    <li>Multi-app (run multiple delivery apps simultaneously)</li>
+                </ul>
+
+                <h3>5. Freelance Rush Jobs (R500-R3,000+ in 4-8 hours)</h3>
+                <p>Some clients need work done URGENTLY and will pay premium rates.</p>
+                <h4>Fiverr Express Gigs:</h4>
+                <p>Offer services you can complete in 24 hours:</p>
+                <ul>
+                    <li>Data entry (R500-R1,000 for 4 hours work)</li>
+                    <li>Transcription (R800-R1,500 for 2 hours of audio)</li>
+                    <li>Social media post creation (R200-R400 per post, create 10 in a day)</li>
+                    <li>Basic logo design (R500-R2,000)</li>
+                    <li>WordPress fixes (R800-R2,500)</li>
+                </ul>
+                <h4>Strategy:</h4>
+                <p>Set your delivery time to 24 hours, price slightly higher than standard gigs, mention "express delivery available" in your gig description.</p>
+
+                <h3>6. Mystery Shopping (R200-R600 per assignment × 3-5 shops = R600-R3,000)</h3>
+                <p>Companies pay you to visit stores, restaurants, or services and provide detailed feedback.</p>
+                <h4>South African Mystery Shopping Companies:</h4>
+                <ul>
+                    <li>Retail Capital Mystery Shopping</li>
+                    <li>Bare International</li>
+                    <li>Market Force</li>
+                </ul>
+                <h4>What to Expect:</h4>
+                <p>Visit assigned locations, make a purchase (often reimbursed), complete detailed reports, get paid R200-R600 per shop depending on complexity.</p>
+
+                <h3>7. Paid Task Apps (R50-R200 per task × 10-20 tasks = R500-R4,000)</h3>
+                <p>Complete small tasks for money—market research, app testing, surveys.</p>
+                <h4>Legitimate Task Apps:</h4>
+                <ul>
+                    <li><strong>Foap:</strong> Sell your smartphone photos (R90-R450 per photo)</li>
+                    <li><strong>Field Agent:</strong> Complete local store checks (R20-R200 per task)</li>
+                    <li><strong>Roamler:</strong> Mystery shopping and micro-tasks</li>
+                    <li><strong>Streetspotr:</strong> Photo missions and store visits</li>
+                </ul>
+
+                <h3>The Stacking Strategy</h3>
+                <p>To maximize your 24-hour earnings, combine multiple methods:</p>
+                
+                <h4>Sample Day to Earn R2,500+:</h4>
+                <ul>
+                    <li><strong>8am-9am:</strong> Sell 2 unused items on Facebook Marketplace (R800)</li>
+                    <li><strong>10am-2pm:</strong> Complete 3 tutoring sessions (R1,200)</li>
+                    <li><strong>3pm-5pm:</strong> Deliver food orders during afternoon rush (R400)</li>
+                    <li><strong>6pm-8pm:</strong> Complete urgent Fiverr gig (R600)</li>
+                    <li><strong>Total: R3,000 in one day</strong></li>
+                </ul>
+
+                <h3>Important Safety Tips</h3>
+                <ul>
+                    <li>Always meet buyers in public places</li>
+                    <li>Use secure payment methods (EFT, SnapScan, not cash if possible)</li>
+                    <li>Trust your instincts—if something feels wrong, walk away</li>
+                    <li>Tell someone where you're going for meetups</li>
+                    <li>Verify legitimacy of platforms before providing personal information</li>
+                </ul>
+
+                <h3>Final Thoughts</h3>
+                <p>These methods work, but they require effort and time. The best approach is to have multiple income streams set up BEFORE you need emergency cash. Consider building skills for higher-paying freelance work as a longer-term strategy.</p>
+
+                <p><strong>Action Step:</strong> Choose 2-3 methods from this list and take action today. Don't wait for the "perfect" opportunity—start with what you have and where you are.</p>
+            </article>
+        </div>
+
+        <!-- METHODS PAGE -->
+        <div id="methods-page" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <div class="full-article">
+                <h2>Popular Money-Making Methods</h2>
+                <p>Explore comprehensive guides on the most effective ways to build income online. Each method has been tested and proven by thousands of successful entrepreneurs.</p>
+                
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h4>📊 Affiliate Marketing Essentials</h4>
+                        <p>Learn how to earn commissions by promoting products you love. Perfect for beginners with R0 startup cost.</p>
+                        <p><strong>Potential:</strong> R5,000-R50,000+/month</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>✍️ Starting a Profitable Blog</h4>
+                        <p>Build a blog that generates income through ads, affiliate links, and sponsored content.</p>
+                        <p><strong>Startup Cost:</strong> R180-R500/month</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📹 YouTube Monetization Guide</h4>
+                        <p>Turn your video content into consistent revenue through ads, sponsorships, and memberships.</p>
+                        <p><strong>Requirements:</strong> 1,000 subscribers, 4,000 watch hours</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🛍️ Dropshipping for Beginners</h4>
+                        <p>Run an e-commerce store without holding inventory. Sell products that ship directly from suppliers.</p>
+                        <p><strong>Startup:</strong> R1,800-R9,000</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>👕 Print on Demand Business</h4>
+                        <p>Design custom products (t-shirts, mugs, posters) that are printed only when customers order.</p>
+                        <p><strong>Platforms:</strong> Printful, Teespring, Redbubble</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📦 Amazon FBA Explained</h4>
+                        <p>Fulfill by Amazon—they store, pack, and ship your products while you focus on sourcing and marketing.</p>
+                        <p><strong>Investment:</strong> R18,000+ recommended</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎓 Creating Online Courses</h4>
+                        <p>Package your knowledge into structured courses and earn passive income teaching what you know.</p>
+                        <p><strong>Tools:</strong> Teachable, Udemy, Skillshare</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>💰 Cryptocurrency for Beginners</h4>
+                        <p>Understand crypto investing, trading, and earning opportunities. Start with education, not speculation.</p>
+                        <p><strong>Warning:</strong> High risk—never invest more than you can lose</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🏠 Real Estate Crowdfunding</h4>
+                        <p>Invest in property projects with as little as R1,000. Earn rental income and capital appreciation.</p>
+                        <p><strong>SA Platforms:</strong> Property Partner, Wealth Migrate</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📧 Building an Email List</h4>
+                        <p>Your email list is your most valuable asset. Learn to build and monetize an engaged audience.</p>
+                        <p><strong>ROI:</strong> R36-R720 per subscriber per year</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎨 Selling Digital Art & NFTs</h4>
+                        <p>Create and sell digital artwork on marketplaces. NFTs offer new opportunities for artists.</p>
+                        <p><strong>Marketplaces:</strong> OpenSea, Etsy, Society6</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📱 App Development Side Hustle</h4>
+                        <p>Learn no-code tools to build mobile apps. Earn from downloads, subscriptions, or selling the app.</p>
+                        <p><strong>Tools:</strong> FlutterFlow, Adalo, Bubble</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESOURCES PAGE -->
+        <div id="resources-page" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <div class="full-article">
+                <h2>Essential Resources for Online Entrepreneurs</h2>
+                <p>Curated tools, platforms, and learning resources to accelerate your online income journey.</p>
+
+                <h3>💼 Best Freelance Platforms 2025</h3>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h4>Upwork</h4>
+                        <p>Largest freelance marketplace. Best for: all skill levels, long-term clients</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>Fiverr</h4>
+                        <p>Gig-based platform. Best for: quick jobs, creative services, beginners</p>
+                    </div>
+                    <div class="resource-card">
+                        <h4>Freelancer.com</h4>
+                        <p>Contest-based and traditional projects. Best for: competitive pricing, diverse projects</p>
+                    </div>
+                </div>
+
+                <h3>📚 Free Online Learning Resources</h3>
+                <ul>
+                    <li><strong>Coursera:</strong> University-level courses (audit for free)</li>
+                    <li><strong>freeCodeCamp:</strong> Learn coding from zero to job-ready</li>
+                    <li><strong>HubSpot Academy:</strong> Marketing certifications (100% free)</li>
+                    <li><strong>Google Digital Garage:</strong> Digital marketing fundamentals</li>
+                    <li><strong>YouTube:</strong> Literally everything—find quality channels in your niche</li>
+                    <li><strong>Khan Academy:</strong> Academic subjects explained simply</li>
+                </ul>
+
+                <h3>🛠️ Essential Tools for Online Business</h3>
+                <h4>Design & Creative:</h4>
+                <ul>
+                    <li><strong>Canva:</strong> Graphic design made simple (Free + Pro R109/month)</li>
+                    <li><strong>Figma:</strong> UI/UX design and prototyping (Free plan available)</li>
+                    <li><strong>DaVinci Resolve:</strong> Professional video editing (Free)</li>
+                </ul>
+
+                <h4>Productivity:</h4>
+                <ul>
+                    <li><strong>Notion:</strong> All-in-one workspace (Free for individuals)</li>
+                    <li><strong>Trello:</strong> Visual project management (Free plan robust)</li>
+                    <li><strong>Google Workspace:</strong> Docs, Sheets, Drive (Free with Gmail)</li>
+                </ul>
+
+                <h4>Marketing:</h4>
+                <ul>
+                    <li><strong>Mailchimp:</strong> Email marketing (Free up to 500 subscribers)</li>
+                    <li><strong>Buffer:</strong> Social media scheduling (Free for 3 channels)</li>
+                    <li><strong>Google Analytics:</strong> Website traffic insights (Free)</li>
+                </ul>
+
+                <h3>💳 Tax Tips for Side Hustlers</h3>
+                <p><strong>Important:</strong> In South Africa, you must declare all income to SARS, including side hustle earnings.</p>
+                <ul>
+                    <li>Register as a sole proprietor if earning over R120,000/year</li>
+                    <li>Keep detailed records of income and expenses</li>
+                    <li>Set aside 25-30% of earnings for tax</li>
+                    <li>Claim deductible expenses (internet, equipment, home office)</li>
+                    <li>File provisional tax returns if required</li>
+                    <li>Consider consulting an accountant (costs R1,000-R3,000, worth it)</li>
+                </ul>
+
+                <h3>📈 Financial Planning Resources</h3>
+                <ul>
+                    <li><strong>22Seven:</strong> Free budgeting app (SA-specific)</li>
+                    <li><strong>YNAB (You Need A Budget):</strong> Powerful budgeting tool</li>
+                    <li><strong>EasyEquities:</strong> Start investing with just R50</li>
+                    <li><strong>Satrix:</strong> Low-cost index funds</li>
+                </ul>
+
+                <h3>🎯 Recommended Books</h3>
+                <ul>
+                    <li><em>The Lean Startup</em> by Eric Ries</li>
+                    <li><em>$100 Startup</em> by Chris Guillebeau</li>
+                    <li><em>Deep Work</em> by Cal Newport</li>
+                    <li><em>The 4-Hour Work Week</em> by Tim Ferriss</li>
+                    <li><em>Atomic Habits</em> by James Clear</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="page-content hidden">
+            <button class="back-button" onclick="showPage('home')">← Back to Home</button>
+            <div class="full-article">
+                <h2>About Money Makers Hub</h2>
+                
+                <p>Welcome to Money Makers Hub, your trusted South African resource for building sustainable online income streams.</p>
+
+                <h3>Our Mission</h3>
+                <p>We believe financial freedom shouldn't be reserved for the privileged few. With internet access and determination, anyone can build multiple income streams and achieve financial independence.</p>
+
+                <p>Our mission is to provide practical, actionable, and honest information about making money online—no hype, no scams, just real strategies that work.</p>
+
+                <h3>What Makes Us Different</h3>
+                <ul>
+                    <li><strong>South African Focus:</strong> All amounts in Rands, platforms available in SA, local opportunities</li>
+                    <li><strong>Tested Methods:</strong> We only share strategies that have been proven to work</li>
+                    <li><strong>Honest Expectations:</strong> We tell you the truth about effort required and realistic earnings</li>
+                    <li><strong>Beginner-Friendly:</strong> Clear, step-by-step guides without assuming prior knowledge</li>
+                    <li><strong>Updated Daily:</strong> Fresh content with current opportunities</li>
+                </ul>
+
+                <h3>What We Cover</h3>
+                <ul>
+                    <li>Freelancing and remote work opportunities</li>
+                    <li>Passive income strategies</li>
+                    <li>Investment basics for beginners</li>
+                    <li>Side hustles and part-time income</li>
+                    <li>Digital products and online businesses</li>
+                    <li>Skills development and career pivots</li>
+                </ul>
+
+                <h3>Our Values</h3>
+                <p><strong>Transparency:</strong> We clearly distinguish between easy wins and long-term strategies.</p>
+                <p><strong>Education:</strong> We don't just tell you what to do—we explain why and how.</p>
+                <p><strong>Community:</strong> Your success is our success. We celebrate wins and learn from setbacks together.</p>
+                <p><strong>Integrity:</strong> We never recommend something we wouldn't do ourselves.</p>
+
+                <h3>Who This Site Is For</h3>
+                <ul>
+                    <li>Students looking to earn while studying</li>
+                    <li>Parents wanting flexible work-from-home options</li>
+                    <li>Employees building side income for financial security</li>
+                    <li>Entrepreneurs launching online businesses</li>
+                    <li>Anyone ready to take control of their financial future</li>
+                </ul>
+
+                <h3>Start Your Journey Today</h3>
+                <p>Financial freedom isn't built overnight, but every journey starts with a single step. Browse our articles, choose one method that resonates with you, and take action today.</p>
+
+                <p>Remember: The best time to start was yesterday. The second-best time is now.</p>
+
+                <h3>Contact Us</h3>
+                <p>Have questions, success stories, or topic suggestions? We'd love to hear from you!</p>
+                <p>Email: <strong>hello@moneymakershub.co.za</strong></p>
+                <p>Follow us on social media for daily tips and motivation.</p>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -402,11 +1101,61 @@
             <p>&copy; 2025 Money Makers Hub. All rights reserved.</p>
             <p>Disclaimer: Results may vary. Always do your own research before investing time or money into any opportunity.</p>
             <p style="margin-top: 1rem; font-size: 0.9rem;">
-                <a href="#" style="color: #d7ccc8; margin: 0 1rem;">Privacy Policy</a>
-                <a href="#" style="color: #d7ccc8; margin: 0 1rem;">Terms of Service</a>
-                <a href="#" style="color: #d7ccc8; margin: 0 1rem;">Contact Us</a>
+                <a onclick="showPage('about')">Privacy Policy</a>
+                <a onclick="showPage('about')">Terms of Service</a>
+                <a onclick="showPage('about')">Contact Us</a>
             </p>
         </div>
     </footer>
+
+    <script>
+        // Page navigation system
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+
+            // Show requested page
+            const pageMap = {
+                'home': 'home-page',
+                'articles': 'home-page',
+                'methods': 'methods-page',
+                'resources': 'resources-page',
+                'about': 'about-page'
+            };
+
+            const targetPage = document.getElementById(pageMap[pageName]);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Article navigation
+        function showArticle(articleName) {
+            const articles = document.querySelectorAll('.page-content');
+            articles.forEach(article => article.classList.add('hidden'));
+
+            const articleMap = {
+                'freelance': 'freelance-article',
+                'digital-products': 'digital-products-article',
+                'quick-money': 'quick-money-article',
+                'dividend': 'home-page',
+                'hobby': 'home-page',
+                'remote-jobs': 'home-page'
+            };
+
+            const targetArticle = document.getElementById(articleMap[articleName]);
+            if (targetArticle) {
+                targetArticle.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Initialize - show home page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
 </body>
 </html>
